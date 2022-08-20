@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class AnotherConfigApp {
 
     @Bean
-    String str(){
+    String str(){ // java.lang package
         return "Spring Short Videos";
     }
 

@@ -7,10 +7,11 @@ import org.springframework.stereotype.Component;
 @Configuration
 public class ConfigApp{
 
-//    PartTimeMentor partTimeMentor(){
-//        return new PartTimeMentor();
-//
-//    }
+    @Bean // -> ready classes
+    PartTimeMentor partTimeMentor(){
+        return new PartTimeMentor("test12");
+
+    }
     @Bean
     FullTimeMentor fullTimeMentor(){
         return new FullTimeMentor();
