@@ -16,7 +16,7 @@ public class User extends  BaseEntity{
     private String name;
     private String lastName;
     private String program;
-    private Role role;
+    //private Role role;
 
 
 
