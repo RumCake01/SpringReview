@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zeroToHero</groupId>
-    <artifactId>Spring-02-ORM</artifactId>
+    <artifactId>Spring-03-ORM</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-02-ORM</name>
-    <description>Spring-02-ORM</description>
+    <name>Spring-03-ORM</name>
+    <description>Spring-03-ORM</description>
     <properties>
         <java.version>11</java.version>
     </properties>
