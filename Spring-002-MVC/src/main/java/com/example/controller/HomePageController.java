@@ -1,6 +1,6 @@
-package com.zeroToHero.controller;
+package com.example.controller;
 
-import com.zeroToHero.model.RumisHouse;
+import com.example.model.RumisHouse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;

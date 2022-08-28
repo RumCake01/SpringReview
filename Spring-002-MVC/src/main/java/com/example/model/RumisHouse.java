@@ -1,5 +1,5 @@
 
-package com.zeroToHero.model;
+package com.example.model;
 
 
 import lombok.AllArgsConstructor;
