@@ -2,8 +2,8 @@ package com.example.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -14,4 +14,9 @@ public class Program extends BaseEntity{
     //private Subject subject;
     private Long studyProgress;
     private Long duration;
+
+    @ManyToMany
+    private List<User> user;
+
+
 }
