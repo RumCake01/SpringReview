@@ -14,9 +14,13 @@ public class Program extends BaseEntity{
     //private Subject subject;
     private Long studyProgress;
     private Long duration;
+    private String programName;
 
     @ManyToMany
     private List<User> user;
+
+    @ManyToMany(mappedBy = "programList")
+    private List<User> userList;
 
 
 }
