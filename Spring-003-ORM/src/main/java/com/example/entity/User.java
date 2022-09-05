@@ -8,11 +8,12 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
 @Table(name="users")
 public class User extends BaseEntity{
 
@@ -27,18 +28,13 @@ public class User extends BaseEntity{
     @JoinColumn(name = "r_id" ) //reference to the role_id
     private Role role;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
-
-    @JoinTable(name = "user_prog_rel",
-            joinColumns= @JoinColumn(name = "program_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id" ))
-    private List <Program> program;// we created a list here because we pass programs as a list and one student enrolled in many programs
 
     @ManyToMany
     @JoinTable(name = "user_program_rel",
             joinColumns = @JoinColumn(name="user_id"),
             inverseJoinColumns = @JoinColumn(name = "program_id"))
-    private List<Program> programList;
+    private Set<Program> programList;
+
 
 
     @Override
