@@ -29,11 +29,12 @@ public class User extends BaseEntity{
     private Role role;
 
 
-    @ManyToMany
-    @JoinTable(name = "user_program_rel",
-            joinColumns = @JoinColumn(name="user_id"),
-            inverseJoinColumns = @JoinColumn(name = "program_id"))
-    private Set<Program> programList;
+    @ManyToOne
+    @JoinColumn(name = "program_id")
+//    //@JoinTable(name = "user_program_rel",
+//            joinColumns = @JoinColumn(name="user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "program_id"))
+    private Program program;
 
 
 
@@ -44,7 +45,7 @@ public class User extends BaseEntity{
                 ", createdTime=" + createdTime +
                 ", updatedBy=" + updatedBy +
                 ", updatedTime=" + updatedTime +
-                ", firstName='" + firstName + '\'' +
+                ", first_Name='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", enabled=" + enabled +

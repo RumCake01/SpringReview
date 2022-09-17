@@ -3,6 +3,7 @@ package com.example.bootstrap;
 import com.example.entity.User;
 import com.example.repository.*;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -40,6 +41,19 @@ public class DataGenerator implements CommandLineRunner {
 
         List<User> userBySalaryAndDescription= userRepository.findByRole_DescriptionAndRole_Salary("Developer", 200000);
         userBySalaryAndDescription.stream().forEach(System.out::println);
+
+        System.out.println(" new new new  ");
+
+        userRepository.getUserBy("Smith", "Mike", "admin@cydeo.com").stream().forEach(System.out::println);
+
+        userRepository.findByFirstNameNative().stream().forEach(System.out::println);
+
+        System.out.println(userRepository.retrieveByEmail("root@cydeo.com"));
+
+        System.out.println("newwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+
+        userRepository.findAllByUserEmail("root@cydeo.com").stream().forEach(System.out::println);
+
     }
 
 

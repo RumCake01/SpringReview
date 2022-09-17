@@ -19,11 +19,8 @@ public class Program extends BaseEntity{
     private String programName;
 
 
-    @ManyToMany(mappedBy = "programList")
-    private List<User> userList;
 
-    @ManyToMany(mappedBy = "programList")
-    private List<User> userList;
+
 
 
 }
