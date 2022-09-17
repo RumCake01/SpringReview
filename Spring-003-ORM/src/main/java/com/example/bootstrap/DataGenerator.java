@@ -33,26 +33,6 @@ public class DataGenerator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        List <User> usersByLastName = userRepository.findByLastName("Smith");
-        System.out.println("test");
-        usersByLastName.stream().forEach(System.out::println);
-        List <User> usersByFirstName = userRepository.findByFirstName("jenna");
-        usersByFirstName.stream().forEach(System.out::println);
-
-        List<User> userBySalaryAndDescription= userRepository.findByRole_DescriptionAndRole_Salary("Developer", 200000);
-        userBySalaryAndDescription.stream().forEach(System.out::println);
-
-        System.out.println(" new new new  ");
-
-        userRepository.getUserBy("Smith", "Mike", "admin@cydeo.com").stream().forEach(System.out::println);
-
-        userRepository.findByFirstNameNative().stream().forEach(System.out::println);
-
-        System.out.println(userRepository.retrieveByEmail("root@cydeo.com"));
-
-        System.out.println("newwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
-
-        userRepository.findAllByUserEmail("root@cydeo.com").stream().forEach(System.out::println);
 
     }
 

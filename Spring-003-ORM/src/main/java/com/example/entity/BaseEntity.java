@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @MappedSuperclass
-
 public class BaseEntity {
 
     @Id
@@ -33,9 +33,3 @@ public class BaseEntity {
     private Boolean isDeleted=false;
 
 }
-
-
-
-
-
-

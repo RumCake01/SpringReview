@@ -19,6 +19,7 @@ public class Subject extends BaseEntity{
     private String title; // title of the subject
     private Long subjectDuration; // hours of the subject
     private Long subjectStudyProgress; // how much time has student completed from this subject
+
     @ManyToOne
     private Program program;
 
