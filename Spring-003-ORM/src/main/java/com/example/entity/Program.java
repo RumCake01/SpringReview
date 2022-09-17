@@ -4,6 +4,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -11,13 +12,15 @@ import java.util.List;
 @Table(name="programs")
 public class Program extends BaseEntity{
 
-    //private Subject subject;
+    @OneToMany(mappedBy = "program")
+    private List<Subject> subject;
     private Long studyProgress;
     private Long duration;
     private String programName;
 
-    @ManyToMany
-    private List<User> user;
+
+    @ManyToMany(mappedBy = "programList")
+    private List<User> userList;
 
     @ManyToMany(mappedBy = "programList")
     private List<User> userList;
