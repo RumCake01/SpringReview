@@ -12,8 +12,7 @@ import java.util.Set;
 @Table(name="programs")
 public class Program extends BaseEntity{
 
-    @OneToMany(mappedBy = "program")
-    private List<Subject> subject;
+
     private Long studyProgress;
     private Long duration;
     private String programName;

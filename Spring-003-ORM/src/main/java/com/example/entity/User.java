@@ -1,20 +1,19 @@
 package com.example.entity;
 
 import com.example.enums.UserStatus;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
+
 
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="users")
+@Table(name = "users")
+@Where(clause= "is_deleted=false")
 public class User extends BaseEntity{
 
     private String firstName;
@@ -29,23 +28,15 @@ public class User extends BaseEntity{
     private Role role;
 
 
-    @ManyToOne
-    @JoinColumn(name = "program_id")
-//    //@JoinTable(name = "user_program_rel",
-//            joinColumns = @JoinColumn(name="user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "program_id"))
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name = "program_id" )
     private Program program;
-
 
 
     @Override
     public String toString() {
         return "User{" +
-                "createdBy=" + createdBy +
-                ", createdTime=" + createdTime +
-                ", updatedBy=" + updatedBy +
-                ", updatedTime=" + updatedTime +
-                ", first_Name='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", enabled=" + enabled +
